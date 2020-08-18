@@ -26,3 +26,4 @@ void input()
 	if (IsKeyDown(KEY_DOWN))
 		players[PLAYER2].rec.y += VEL_PLAYER * GetFrameTime();
 }
+//
