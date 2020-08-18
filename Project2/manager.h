@@ -1,9 +1,14 @@
 #pragma once
 #include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <math.h>
 #include "raylib.h"
+
+#define FPS 60
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 480
-#define FPS 60
 
 #include "player.h"
 #include "ball.h"
