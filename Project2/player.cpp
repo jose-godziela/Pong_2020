@@ -9,14 +9,14 @@ Player players[TOTAL_PLAYERS];
 
 void init_players()
 {
-	posX_player1 = 0;
-	posX_player2 = GetScreenWidth() - 30;
+	posX_player1 = 10;
+	posX_player2 = GetScreenWidth() - 20;
 	posY_players = GetScreenHeight() / 2;
 
 
 	for (int i = 0; i < TOTAL_PLAYERS; i++) {
 		players[i].score = 0;
-		players[i].size.x = 30.0f;
+		players[i].size.x = 10.0f;
 		players[i].size.y = 80.0f;
 
 		players[i].rec.x = posX_player1;

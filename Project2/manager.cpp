@@ -9,7 +9,6 @@ Ball ball;
 //aux, later change or remove them
 bool game_start = false;
 bool window_open;
-bool check_player1;
 float speed_up = 60.0f;
 float foo;
 
@@ -27,7 +26,6 @@ void game()
 {
 	InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Window Test");
 	window_open = true;
-	check_player1 = true;
 	SetTargetFPS(FPS);
 	init();
 
@@ -61,6 +59,10 @@ void draw()
 		draw_game();
 	}
 	break;
+	case CREDITS:
+	{
+
+	}break;
 	}
 
 
@@ -134,12 +136,12 @@ void player_collitions()
 	if (CheckCollisionCircleRec(ball.ball_position, ball.ball_radius, players[PLAYER1].rec) ||
 		CheckCollisionCircleRec(ball.ball_position, ball.ball_radius, players[PLAYER2].rec)) {
 		ball.ball_speed.x *= -1.0f;
-		if (ball.ball_speed.x < 0 && check_player1) {
+		if (ball.ball_speed.x < 0) {
 			ball.ball_speed.x -= speed_up;
 			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER1].rec.y) / (players[PLAYER1].rec.width / 2) * 5;
 			ball.ball_position.x -= ball.ball_radius;
 		}
-		else if (!check_player1) {
+		else  {
 			ball.ball_speed.x += speed_up;
 			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER2].rec.y) / (players[PLAYER2].rec.width / 2) * 5;
 			ball.ball_position.x += ball.ball_radius;
