@@ -21,6 +21,7 @@ void input()
 	if (IsKeyDown(KEY_S))
 		players[PLAYER1].rec.y += VEL_PLAYER * GetFrameTime();
 	//Player 2 movement
+	//
 	if (IsKeyDown(KEY_UP))
 		players[PLAYER2].rec.y -= VEL_PLAYER * GetFrameTime();
 	if (IsKeyDown(KEY_DOWN))
