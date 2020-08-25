@@ -19,6 +19,7 @@ void init()
 	init_players();
 	init_ball();
 	init_buttons();
+	init_game_Type();
 }
 
 
@@ -85,6 +86,20 @@ void update()
 			CloseWindow();
 			window_open = false;
 		}
+		if (IsKeyPressed(KEY_C))
+		{
+			switch ((game_Type))
+			{
+			case PvP:
+			{
+				game_Type = PvB;
+			}break;
+			case PvB:
+			{
+				game_Type = PvP;
+			}break;
+			}
+		}
 	}
 	break;
 	case GAME:
@@ -138,12 +153,12 @@ void player_collitions()
 		ball.ball_speed.x *= -1.0f;
 		if (ball.ball_speed.x < 0) {
 			ball.ball_speed.x -= speed_up;
-			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER1].rec.y) / (players[PLAYER1].rec.width / 2) * 5;
+			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER1].rec.y) / (players[PLAYER1].rec.x / 2) * 6;
 			ball.ball_position.x -= ball.ball_radius;
 		}
 		else  {
 			ball.ball_speed.x += speed_up;
-			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER2].rec.y) / (players[PLAYER2].rec.width / 2) * 5;
+			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER2].rec.y) / (players[PLAYER2].rec.x / 2) * 6;
 			ball.ball_position.x += ball.ball_radius;
 		}
 	}

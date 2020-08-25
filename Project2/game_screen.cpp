@@ -1,5 +1,6 @@
 #include "game_screen.h"
 
+game_type game_Type;
 
 void draw_game()
 {
@@ -22,9 +23,23 @@ void input()
 		players[PLAYER1].rec.y += VEL_PLAYER * GetFrameTime();
 	//Player 2 movement
 	//
-	if (IsKeyDown(KEY_UP))
-		players[PLAYER2].rec.y -= VEL_PLAYER * GetFrameTime();
-	if (IsKeyDown(KEY_DOWN))
-		players[PLAYER2].rec.y += VEL_PLAYER * GetFrameTime();
+	if (game_Type != PvP) {
+		if (ball.ball_position.y < players[PLAYER2].rec.y && ball.ball_position.x >= GetScreenWidth() / 2) {
+			players[PLAYER2].rec.y -= VEL_PLAYER * GetFrameTime();
+		}
+		if (ball.ball_position.y > players[PLAYER2].rec.y && ball.ball_position.x >= GetScreenWidth() / 2) {
+			players[PLAYER2].rec.y += VEL_PLAYER * GetFrameTime();
+		}
+	}
+	else {
+		if (IsKeyDown(KEY_UP))
+			players[PLAYER2].rec.y -= VEL_PLAYER * GetFrameTime();
+		if (IsKeyDown(KEY_DOWN))
+			players[PLAYER2].rec.y += VEL_PLAYER * GetFrameTime();
+	}
+}
+void init_game_Type()
+{
+	game_Type = PvP;
 }
 //

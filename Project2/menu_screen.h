@@ -25,5 +25,7 @@ enum Button_type
 	close_game
 };
 
+
+
 extern Button_type button_type;
 extern Button buttons[CANT_BUTTONS];

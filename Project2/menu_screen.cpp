@@ -10,8 +10,9 @@ void draw_menu()
 
 	DrawText("Need name for pong ripoff", GetScreenWidth() / 5, GetScreenHeight() / 5, 30, RED);
 	DrawText("press space to begin", GetScreenWidth() / 3, GetScreenHeight() / 3, 20, RED);
+	DrawText("Press C to activate IA", GetScreenWidth() / 3, GetScreenHeight() / 2, 20, RED);
 	DrawText("Controls: WS (player1) / UP DOWN (player2)", GetScreenWidth() / 5, GetScreenHeight() / 10, 20, RAYWHITE);
-	//draw_buttons();
+
 }
 
 void init_buttons()
