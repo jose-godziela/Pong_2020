@@ -5,16 +5,22 @@ Button buttons[CANT_BUTTONS];
 
 void draw_buttons();
 
+//aux
+int aux_offset = 5;
+int aux_font = 30;
+
+
 void draw_menu()
 {
 
-	DrawText("Need name for pong ripoff", GetScreenWidth() / 5, GetScreenHeight() / 5, 30, RED);
-	DrawText("press space to begin", GetScreenWidth() / 3, GetScreenHeight() / 3, 20, RED);
-	DrawText("Press C to activate IA", GetScreenWidth() / 3, GetScreenHeight() / 2, 20, RED);
+	DrawText("Need name for pong rip-off", GetScreenWidth() / 5, GetScreenHeight() / 5, 30, RED);
 	DrawText("Controls: WS (player1) / UP DOWN (player2)", GetScreenWidth() / 5, GetScreenHeight() / 10, 20, RAYWHITE);
 
 	draw_buttons();
-
+	DrawText("Play vs Player", buttons[0].rec.x + aux_offset, buttons[0].rec.y, aux_font, RED);
+	DrawText("Play vs IA", buttons[1].rec.x + aux_offset, buttons[1].rec.y, aux_font, RED);
+	DrawText("Credits", buttons[2].rec.x + aux_offset, buttons[2].rec.y, aux_font, RED);
+	DrawText("GTFO", buttons[3].rec.x + aux_offset, buttons[3].rec.y, aux_font, RED);
 }
 
 void init_buttons()

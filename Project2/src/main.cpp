@@ -1,7 +1,5 @@
 #include <iostream>
 #include "manager.h"
-#define SLEEP 2000
-
 
 using namespace std;
 
