@@ -16,4 +16,5 @@ struct Button
 	Rectangle rec;
 	Color col;
 };
+
 extern Button buttons[CANT_BUTTONS];
