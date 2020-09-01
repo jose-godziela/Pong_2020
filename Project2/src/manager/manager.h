@@ -15,16 +15,18 @@
 #include "menu_screen.h"
 #include "game_screen.h"
 #include "credits_screen.h"
+#include "control_screen.h"
 
 void game();
 
 
 
-enum gameState
+enum class gameState
 {
 	MENU,
 	GAME,
-	CREDITS
+	CREDITS,
+	CONTROL_SCREEN
 };
 
 extern gameState game_state;

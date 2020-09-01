@@ -10,6 +10,8 @@ struct Player {
 	Vector2 size;
 	int score;
 	Color color;
+	int movement_up;
+	int movement_down;
 };
 
 extern Player players[TOTAL_PLAYERS];

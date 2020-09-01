@@ -26,11 +26,16 @@ void init_players()
 		players[i].rec.height = players[i].size.y;
 		players[i].color = BLUE;
 
+		players[i].movement_up = KEY_W;
+		players[i].movement_down = KEY_S;
+
 		if (i == PLAYER2)
 		{
 			//Player 2 X position and base color
 			players[PLAYER2].rec.x = posX_player2;
 			players[PLAYER2].color = RED;
+			players[PLAYER2].movement_up = KEY_UP;
+			players[PLAYER2].movement_down = KEY_DOWN;
 
 		}
 	}

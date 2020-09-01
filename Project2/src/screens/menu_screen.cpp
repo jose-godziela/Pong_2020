@@ -20,7 +20,8 @@ void draw_menu()
 	DrawText("Play vs Player",	static_cast<int>(buttons[0].rec.x) + aux_offset, static_cast<int>(buttons[0].rec.y), aux_font, RED);
 	DrawText("Play vs IA",		static_cast<int>(buttons[1].rec.x) + aux_offset, static_cast<int>(buttons[1].rec.y), aux_font, RED);
 	DrawText("Credits",			static_cast<int>(buttons[2].rec.x) + aux_offset, static_cast<int>(buttons[2].rec.y), aux_font, RED);
-	DrawText("Close Game",		static_cast<int>(buttons[3].rec.x) + aux_offset, static_cast<int>(buttons[3].rec.y), aux_font, RED);
+	DrawText("Change Controls",	static_cast<int>(buttons[3].rec.x) + aux_offset, static_cast<int>(buttons[3].rec.y), aux_font, RED);
+	DrawText("Close Game",		static_cast<int>(buttons[4].rec.x) + aux_offset, static_cast<int>(buttons[4].rec.y), aux_font, RED);
 }
 
 void init_buttons()
@@ -29,10 +30,10 @@ void init_buttons()
 	aux_x = GetScreenWidth() / 4;
 	aux_y = aux_x;
 	/* 4 buttons:
-	* 1-PLayer vs player
-	* 2-Player vs IA
-	* 3-Credits
-	* 4-Close
+	* 1st-PLayer vs player
+	* 2nd-Player vs IA
+	* 3rd-Credits
+	* 4th-Close
 	*
 	* 1 starts a 1v1 local game
 	* 2 stars a 1vPC local game

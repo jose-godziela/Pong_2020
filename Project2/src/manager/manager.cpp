@@ -1,9 +1,12 @@
 #include "manager.h"
+#include <iostream>
 
 void init();
 void update();
 void update_game();
 void draw();
+void input();
+
 gameState game_state;
 Ball ball;
 //aux, later change or remove them
@@ -11,6 +14,7 @@ bool game_start = false;
 bool window_open;
 float speed_up = 60.0f;
 float foo;
+bool exit_controls;
 
 
 void init()
@@ -49,20 +53,24 @@ void draw()
 
 	switch (game_state)
 	{
-	case MENU:
+	case gameState::MENU:
 	{
 		draw_menu();
 		button_action();
 	}
 	break;
-	case GAME:
+	case gameState::GAME:
 	{
 		draw_game();
 	}
 	break;
-	case CREDITS:
+	case gameState::CREDITS:
 	{
 		draw_credits();
+	}break;
+	case gameState::CONTROL_SCREEN:
+	{
+		draw_change_controls();
 	}break;
 	}
 
@@ -74,7 +82,7 @@ void update()
 {
 	switch (game_state)
 	{
-	case MENU:
+	case gameState::MENU:
 	{
 		reset_pos_players();
 		reset_ball();
@@ -85,63 +93,51 @@ void update()
 		case 0:
 		{
 			game_Type = PvP;
-			game_state = GAME;
+			game_state = gameState::GAME;
 		}break;
 		case 1:
 		{
-			game_state = GAME;
 			game_Type = PvB;
+			game_state = gameState::GAME;
 		}break;
 		case 2:
 		{
-			game_state = CREDITS;
+			game_state = gameState::CREDITS;
 		}break;
 		case 3:
 		{
+			game_state = gameState::CONTROL_SCREEN;
+		}break;
+		case 4:
+		{
 			EndDrawing();
 			CloseWindow();
 			window_open = false;
 		}break;
-		}
 
-		if (IsKeyPressed(KEY_SPACE))
-		{ 
-			game_state = GAME;
-		}
-		if (IsKeyPressed(KEY_ESCAPE))
-		{
-			EndDrawing();
-			CloseWindow();
-			window_open = false;
-		}
-		if (IsKeyPressed(KEY_C))
-		{
-			switch ((game_Type))
-			{
-			case PvP:
-			{
-				game_Type = PvB;
-			}break;
-			case PvB:
-			{
-				game_Type = PvP;
-			}break;
-			}
 		}
 	}
 	break;
-	case GAME:
+	case gameState::GAME:
 	{
 		update_game();
-		if (IsKeyPressed(KEY_ESCAPE))
-			game_state = MENU;
 	}
 	break;
-	case CREDITS:
+	case gameState::CREDITS:
 	{
 		if (IsKeyPressed(KEY_ESCAPE))
-			game_state = MENU;
-	}
+			game_state = gameState::MENU;
+	}break;
+	case gameState::CONTROL_SCREEN:
+	{
+		exit_controls = change_controls(&players[PLAYER1], &players[PLAYER2]);
+		
+		
+		if (exit_controls) {
+			game_state = gameState::MENU;
+			std:: cout << "ME RAJO" << std::endl;
+		}
+	}break;
 	}
 }
 
@@ -150,12 +146,15 @@ void update()
 
 void check_pause()
 {
-	if (IsKeyPressed(KEY_P)) game_start = !game_start;
+	if (IsKeyPressed(KEY_P) || IsKeyReleased(KEY_ESCAPE)) game_start = !game_start;
+
 	if (!game_start)
 	{
 		DrawText("Press Space or P to resume", GetScreenWidth() / 3, GetScreenHeight() / 4, 20, BLUE);
 		DrawText("Press ESCAPE to go back to the menu", GetScreenWidth() / 3.5, GetScreenHeight() / 4 - 30, 20, BLUE);
 		if (IsKeyPressed(KEY_SPACE)) game_start = !game_start;
+		if (IsKeyPressed(KEY_ESCAPE))
+			game_state = gameState::MENU;
 	}
 }
 
@@ -179,7 +178,7 @@ void check_points()
 	}
 }
 
-void player_collitions()
+void player_collisions()
 {
 	//Player-Ball Collision
 	if (CheckCollisionCircleRec(ball.ball_position, ball.ball_radius, players[PLAYER1].rec) ||
@@ -190,7 +189,7 @@ void player_collitions()
 			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER1].rec.y) / (players[PLAYER1].rec.x / 2) * 6;
 			ball.ball_position.x -= ball.ball_radius;
 		}
-		else  {
+		else {
 			ball.ball_speed.x += speed_up;
 			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER2].rec.y) / (players[PLAYER2].rec.x / 2) * 6;
 			ball.ball_position.x += ball.ball_radius;
@@ -207,7 +206,13 @@ void player_collitions()
 	}
 }
 
-
+void input()
+{
+	if (game_start)
+	{
+		player_input();
+	}
+}
 
 void update_game()
 {
@@ -215,9 +220,10 @@ void update_game()
 	check_pause();
 
 	//Check ball-roof/floor collision
-	if ((ball.ball_position.y >= (GetScreenHeight() - ball.ball_radius)) || (ball.ball_position.y <= ball.ball_radius)) ball.ball_speed.y *= -1.0f;
+	if ((ball.ball_position.y >= (GetScreenHeight() - ball.ball_radius)) || (ball.ball_position.y <= ball.ball_radius))
+		ball.ball_speed.y *= -1.0f;
 
 	//Points
 	check_points();
-	player_collitions();
+	player_collisions();
 }

@@ -14,12 +14,12 @@ void draw_game()
 	//ball draw
 	DrawCircleV(ball.ball_position, ball.ball_radius, ball.color);
 }
-void input()
+void player_input()
 {
 	//Player 1 movement
-	if (IsKeyDown(KEY_W))
+	if (IsKeyDown(players[PLAYER1].movement_up))
 		players[PLAYER1].rec.y -= VEL_PLAYER * GetFrameTime();
-	if (IsKeyDown(KEY_S))
+	if (IsKeyDown(players[PLAYER1].movement_down))
 		players[PLAYER1].rec.y += VEL_PLAYER * GetFrameTime();
 	//Player 2 movement
 	//
@@ -32,9 +32,9 @@ void input()
 		}
 	}
 	else {
-		if (IsKeyDown(KEY_UP))
+		if (IsKeyDown(players[PLAYER2].movement_up))
 			players[PLAYER2].rec.y -= VEL_PLAYER * GetFrameTime();
-		if (IsKeyDown(KEY_DOWN))
+		if (IsKeyDown(players[PLAYER2].movement_down))
 			players[PLAYER2].rec.y += VEL_PLAYER * GetFrameTime();
 	}
 }

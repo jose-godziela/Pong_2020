@@ -13,4 +13,4 @@ extern game_type game_Type;
 
 void init_game_Type();
 void draw_game();
-void input();
+void player_input();

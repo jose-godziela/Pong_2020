@@ -37,6 +37,9 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Raylib Pong</Filter>
     </ClCompile>
+    <ClCompile Include="src\screens\control_screen.cpp">
+      <Filter>Raylib Pong\Screens</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\screens\credits_screen.h">
@@ -56,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="src\entities\player.h">
       <Filter>Raylib Pong\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\screens\control_screen.h">
+      <Filter>Raylib Pong\Screens</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

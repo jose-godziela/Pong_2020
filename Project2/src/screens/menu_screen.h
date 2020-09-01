@@ -2,7 +2,7 @@
 #pragma once
 #include "raylib.h"
 
-#define CANT_BUTTONS 4
+#define CANT_BUTTONS 5
 #define BUTTON_WIDTH 300
 #define BUTTON_HEIGHT 30
 #define BUTTON_SPACE 50

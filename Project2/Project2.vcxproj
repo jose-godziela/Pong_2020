@@ -23,6 +23,7 @@
     <ClCompile Include="src\entities\player.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\manager\manager.cpp" />
+    <ClCompile Include="src\screens\control_screen.cpp" />
     <ClCompile Include="src\screens\credits_screen.cpp" />
     <ClCompile Include="src\screens\game_screen.cpp" />
     <ClCompile Include="src\screens\menu_screen.cpp" />
@@ -31,6 +32,7 @@
     <ClInclude Include="src\entities\ball.h" />
     <ClInclude Include="src\entities\player.h" />
     <ClInclude Include="src\manager\manager.h" />
+    <ClInclude Include="src\screens\control_screen.h" />
     <ClInclude Include="src\screens\credits_screen.h" />
     <ClInclude Include="src\screens\game_screen.h" />
     <ClInclude Include="src\screens\menu_screen.h" />
