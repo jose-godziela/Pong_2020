@@ -18,6 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\entities\ball.cpp" />
+    <ClCompile Include="src\entities\player.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\manager\manager.cpp" />
+    <ClCompile Include="src\screens\credits_screen.cpp" />
+    <ClCompile Include="src\screens\game_screen.cpp" />
+    <ClCompile Include="src\screens\menu_screen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\entities\ball.h" />
+    <ClInclude Include="src\entities\player.h" />
+    <ClInclude Include="src\manager\manager.h" />
+    <ClInclude Include="src\screens\credits_screen.h" />
+    <ClInclude Include="src\screens\game_screen.h" />
+    <ClInclude Include="src\screens\menu_screen.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -72,6 +89,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -88,7 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Raylib\Raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Raylib\Raylib\include;$(SolutionDir)src\entities;$(SolutionDir)src\manager;$(SolutionDir)src\screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>NotSet</SubSystem>
@@ -107,7 +125,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Raylib\Raylib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Raylib\Raylib\include;$(SolutionDir)src\entities;$(SolutionDir)src\manager;$(SolutionDir)src\screens;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -147,21 +165,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="ball.cpp" />
-    <ClCompile Include="game_screen.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="manager.cpp" />
-    <ClCompile Include="menu_screen.cpp" />
-    <ClCompile Include="player.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="ball.h" />
-    <ClInclude Include="game_screen.h" />
-    <ClInclude Include="manager.h" />
-    <ClInclude Include="menu_screen.h" />
-    <ClInclude Include="player.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

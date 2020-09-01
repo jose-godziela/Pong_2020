@@ -12,3 +12,8 @@ void init_ball()
 	ball.color = GRAY;
 	ball.ball_radius = 20;
 }
+
+void reset_ball()
+{
+	ball.ball_position = ball.ball_position_init;
+}

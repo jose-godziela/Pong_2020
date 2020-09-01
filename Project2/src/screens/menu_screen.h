@@ -3,7 +3,7 @@
 #include "raylib.h"
 
 #define CANT_BUTTONS 4
-#define BUTTON_WIDTH 100
+#define BUTTON_WIDTH 300
 #define BUTTON_HEIGHT 30
 #define BUTTON_SPACE 50
 
@@ -17,15 +17,7 @@ struct Button
 	Color col;
 };
 
-enum Button_type
-{
-	vs_player,
-	vs_IA,
-	credits,
-	close_game
-};
 
 
 
-extern Button_type button_type;
 extern Button buttons[CANT_BUTTONS];

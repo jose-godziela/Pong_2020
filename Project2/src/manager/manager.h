@@ -14,6 +14,7 @@
 #include "ball.h"
 #include "menu_screen.h"
 #include "game_screen.h"
+#include "credits_screen.h"
 
 void game();
 

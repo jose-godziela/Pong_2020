@@ -62,7 +62,7 @@ void draw()
 	break;
 	case CREDITS:
 	{
-
+		draw_credits();
 	}break;
 	}
 
@@ -77,9 +77,37 @@ void update()
 	case MENU:
 	{
 		reset_pos_players();
+		reset_ball();
+		game_start = false;
+
+		switch (button_action())
+		{
+		case 0:
+		{
+			game_Type = PvP;
+			game_state = GAME;
+		}break;
+		case 1:
+		{
+			game_state = GAME;
+			game_Type = PvB;
+		}break;
+		case 2:
+		{
+			game_state = CREDITS;
+		}break;
+		case 3:
+		{
+			EndDrawing();
+			CloseWindow();
+			window_open = false;
+		}break;
+		}
 
 		if (IsKeyPressed(KEY_SPACE))
+		{ 
 			game_state = GAME;
+		}
 		if (IsKeyPressed(KEY_ESCAPE))
 		{
 			EndDrawing();
@@ -109,6 +137,11 @@ void update()
 			game_state = MENU;
 	}
 	break;
+	case CREDITS:
+	{
+		if (IsKeyPressed(KEY_ESCAPE))
+			game_state = MENU;
+	}
 	}
 }
 
@@ -120,7 +153,8 @@ void check_pause()
 	if (IsKeyPressed(KEY_P)) game_start = !game_start;
 	if (!game_start)
 	{
-		DrawText("Press Space or P", GetScreenWidth() / 3, GetScreenHeight() / 4, 20, BLUE);
+		DrawText("Press Space or P to resume", GetScreenWidth() / 3, GetScreenHeight() / 4, 20, BLUE);
+		DrawText("Press ESCAPE to go back to the menu", GetScreenWidth() / 3.5, GetScreenHeight() / 4 - 30, 20, BLUE);
 		if (IsKeyPressed(KEY_SPACE)) game_start = !game_start;
 	}
 }

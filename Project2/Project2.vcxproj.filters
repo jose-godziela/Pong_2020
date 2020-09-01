@@ -16,40 +16,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game_screen.cpp">
+    <ClCompile Include="src\screens\credits_screen.cpp">
       <Filter>Raylib Pong\Screens</Filter>
     </ClCompile>
-    <ClCompile Include="menu_screen.cpp">
+    <ClCompile Include="src\screens\game_screen.cpp">
       <Filter>Raylib Pong\Screens</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Raylib Pong\Entities</Filter>
+    <ClCompile Include="src\screens\menu_screen.cpp">
+      <Filter>Raylib Pong\Screens</Filter>
     </ClCompile>
-    <ClCompile Include="ball.cpp">
-      <Filter>Raylib Pong\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="manager.cpp">
+    <ClCompile Include="src\manager\manager.cpp">
       <Filter>Raylib Pong\manager</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\entities\ball.cpp">
+      <Filter>Raylib Pong\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entities\player.cpp">
+      <Filter>Raylib Pong\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
       <Filter>Raylib Pong</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game_screen.h">
+    <ClInclude Include="src\screens\credits_screen.h">
       <Filter>Raylib Pong\Screens</Filter>
     </ClInclude>
-    <ClInclude Include="menu_screen.h">
+    <ClInclude Include="src\screens\game_screen.h">
       <Filter>Raylib Pong\Screens</Filter>
     </ClInclude>
-    <ClInclude Include="ball.h">
-      <Filter>Raylib Pong\Entities</Filter>
+    <ClInclude Include="src\screens\menu_screen.h">
+      <Filter>Raylib Pong\Screens</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Raylib Pong\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="manager.h">
+    <ClInclude Include="src\manager\manager.h">
       <Filter>Raylib Pong\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\ball.h">
+      <Filter>Raylib Pong\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\player.h">
+      <Filter>Raylib Pong\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -12,3 +12,4 @@ struct Ball {
 
 extern Ball ball;
 void init_ball();
+void reset_ball();
