@@ -14,7 +14,6 @@ void draw_menu()
 {
 
 	DrawText("Need name for pong rip-off", GetScreenWidth() / 5, GetScreenHeight() / 5, 30, RED);
-	DrawText("Controls: WS (player1) / UP DOWN (player2)", GetScreenWidth() / 5, GetScreenHeight() / 10, 20, RAYWHITE);
 
 	draw_buttons();
 	DrawText("Play vs Player",	static_cast<int>(buttons[0].rec.x) + aux_offset, static_cast<int>(buttons[0].rec.y), aux_font, RED);
@@ -29,20 +28,6 @@ void init_buttons()
 	short aux_y, aux_x;
 	aux_x = GetScreenWidth() / 4;
 	aux_y = aux_x;
-	/* 4 buttons:
-	* 1st-PLayer vs player
-	* 2nd-Player vs IA
-	* 3rd-Credits
-	* 4th-Close
-	*
-	* 1 starts a 1v1 local game
-	* 2 stars a 1vPC local game
-	* 3 shows music, graphics and other things used in game
-	* 4 closes the game
-	*
-	* Button is a rec, which will check if the mouse is hovering over it (change color/do something) and if it clicked on it (checkcollisionpointrec())
-	*/
-
 
 	//Initialize buttons
 	for (int i = 0; i < CANT_BUTTONS; i++)
@@ -75,6 +60,7 @@ int button_action()
 	}
 	return 5;
 }
+
 void draw_buttons()
 {
 	for (int i = 0; i < CANT_BUTTONS; i++)

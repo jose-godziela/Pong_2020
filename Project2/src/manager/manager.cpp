@@ -1,5 +1,4 @@
 #include "manager.h"
-#include <iostream>
 
 void init();
 void update();
@@ -26,7 +25,6 @@ void init()
 	init_buttons();
 	init_game_Type();
 }
-
 
 void game()
 {
@@ -135,7 +133,6 @@ void update()
 		
 		if (exit_controls) {
 			game_state = gameState::MENU;
-			std:: cout << "ME RAJO" << std::endl;
 		}
 	}break;
 	}
