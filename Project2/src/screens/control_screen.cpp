@@ -1,13 +1,24 @@
 #include "control_screen.h"
+#include <iostream>
 
 int key;
 short c = 0;
+short ascii_offset = 32;
+short min_ascii, max_ascii;
 
 bool change_controls(Player* a, Player* b)
 {
+	min_ascii = 97;
+	max_ascii = 122;
 	key = GetKeyPressed();
+	
+	if (key >= min_ascii && key <= max_ascii) 
+		key -= ascii_offset;
 
-	if (key != NULL && key != KEY_P && key != KEY_ESCAPE)
+	if (key <= min_ascii && key >= max_ascii) 
+		key = NULL;
+
+	if (key != NULL && ((key != KEY_P && key != KEY_P - 32) && key != KEY_ESCAPE))
 	{
 		switch (c)
 		{

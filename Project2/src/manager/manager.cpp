@@ -6,6 +6,7 @@ void update();
 void update_game();
 void draw();
 void input();
+void reset();
 
 gameState game_state;
 Ball ball;
@@ -84,8 +85,7 @@ void update()
 	{
 	case gameState::MENU:
 	{
-		reset_pos_players();
-		reset_ball();
+		reset();
 		game_start = false;
 
 		switch (button_action())
@@ -178,6 +178,7 @@ void check_points()
 	}
 }
 
+
 void player_collisions()
 {
 	//Player-Ball Collision
@@ -186,12 +187,12 @@ void player_collisions()
 		ball.ball_speed.x *= -1.0f;
 		if (ball.ball_speed.x < 0) {
 			ball.ball_speed.x -= speed_up;
-			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER1].rec.y) / (players[PLAYER1].rec.x / 2) * 6;
+			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER1].rec.x) / (players[PLAYER1].rec.x / 2) * 6;
 			ball.ball_position.x -= ball.ball_radius;
 		}
 		else {
 			ball.ball_speed.x += speed_up;
-			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER2].rec.y) / (players[PLAYER2].rec.x / 2) * 6;
+			ball.ball_speed.y = (ball.ball_position.y - players[PLAYER2].rec.x) / (players[PLAYER2].rec.x / 2) * 6;
 			ball.ball_position.x += ball.ball_radius;
 		}
 	}
@@ -212,6 +213,20 @@ void input()
 	{
 		player_input();
 	}
+}
+void reset_points()
+{
+	for (int i = 0; i < CANT_PLAYERS; i++)
+	{
+		players[i].score = 0;
+	}
+}
+
+void reset()
+{
+	reset_pos_players();
+	reset_ball();
+	reset_points();
 }
 
 void update_game()

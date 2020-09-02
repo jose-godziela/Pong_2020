@@ -9,6 +9,7 @@
 #define FPS 60
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 480
+#define CANT_PLAYERS 2
 
 #include "player.h"
 #include "ball.h"
