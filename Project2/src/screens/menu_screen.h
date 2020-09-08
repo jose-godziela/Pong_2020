@@ -7,14 +7,18 @@
 #define BUTTON_HEIGHT 30
 #define BUTTON_SPACE 50
 
-void draw_menu();
-void init_buttons();
-int button_action();
-
-struct Button
+namespace Godziela_pong
 {
-	Rectangle rec;
-	Color col;
-};
 
-extern Button buttons[CANT_BUTTONS];
+	void draw_menu();
+	void init_buttons();
+	int button_action();
+
+	struct Button
+	{
+		Rectangle rec;
+		Color col;
+	};
+
+	extern Button buttons[CANT_BUTTONS];
+}

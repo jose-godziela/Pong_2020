@@ -10,6 +10,7 @@
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 480
 #define CANT_PLAYERS 2
+#define GAME_FONT 20
 
 #include "player.h"
 #include "ball.h"
@@ -18,16 +19,21 @@
 #include "credits_screen.h"
 #include "control_screen.h"
 
-void game();
-
-
-
-enum class gameState
+namespace Godziela_pong
 {
-	MENU,
-	GAME,
-	CREDITS,
-	CONTROL_SCREEN
-};
 
-extern gameState game_state;
+
+	void game();
+
+
+
+	enum class gameState
+	{
+		MENU,
+		GAME,
+		CREDITS,
+		CONTROL_SCREEN
+	};
+
+	extern gameState game_state;
+}

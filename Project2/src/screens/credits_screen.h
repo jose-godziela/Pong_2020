@@ -1,5 +1,7 @@
 #pragma once
 #include "raylib.h"
 
-void draw_credits();
-
+namespace Godziela_pong
+{
+	void draw_credits();
+}
