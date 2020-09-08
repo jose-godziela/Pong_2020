@@ -228,6 +228,7 @@ namespace Godziela_pong
 		reset_pos_players();
 		reset_ball();
 		reset_points();
+		reset_power_up();
 	}
 
 	void update_game()
@@ -239,10 +240,12 @@ namespace Godziela_pong
 		if ((ball.ball_position.y >= (GetScreenHeight() - ball.ball_radius)) || (ball.ball_position.y <= ball.ball_radius))
 			ball.ball_speed.y *= -1.0f;
 
-		power_up();
 
 		//Points
 		check_points();
 		player_collisions();
+		//Power_up
+		if(game_start)
+			power_up();
 	}
 }

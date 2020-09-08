@@ -7,6 +7,8 @@ namespace Godziela_pong
 	Class_power_up class_power_up;
 	short random_time;
 	short counter;
+	short pos_x;
+	short pos_y;
 
 	void draw_game()
 	{
@@ -60,26 +62,38 @@ namespace Godziela_pong
 		power_up_pickup.ball_radius = 10;
 		power_up_pickup.color = DARKGREEN;
 		power_up_pickup.active = false;
+		random_time = GetRandomValue(0, MAX_TIME_POWER_UP);
+		pos_x = GetRandomValue(SCREEN_OFFSET_X, GetScreenWidth());
+		pos_y = GetRandomValue(SCREEN_OFFSET_Y, GetScreenHeight());
 	}
 
 	void power_up()
 	{
-		random_time = GetRandomValue(0, MAX_TIME_POWER_UP);
 
 		if (counter == random_time)
 		{
+
+
+			power_up_pickup.ball_position.x = pos_x;
+			power_up_pickup.ball_position.y = pos_y;
 			power_up_pickup.power_up = NULL;
-			DrawText("TEST", GetScreenWidth() / 2, GetScreenHeight() / 2, 20, BLUE);
 			power_up_pickup.active = true;
 
 			//I have to do this, because it won't let me compare Vector2 with another Vector2
-			if (power_up_pickup.ball_position.x == ball.ball_position.x &&
-				power_up_pickup.ball_position.y == ball.ball_position.y)
+			if (CheckCollisionCircles(power_up_pickup.ball_position,power_up_pickup.ball_radius
+									  ,ball.ball_position,ball.ball_radius))
 			{
+				pos_x = GetRandomValue(SCREEN_OFFSET_X, GetScreenWidth());
+				pos_y = GetRandomValue(SCREEN_OFFSET_Y, GetScreenHeight());
 				power_up_pickup.active = false;
+				counter = 0;
 			}
 		}
 		else
 			counter++;
+	}
+	void reset_power_up()
+	{
+		power_up_pickup.active = false;
 	}
 }

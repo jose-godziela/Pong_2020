@@ -3,7 +3,9 @@
 #include "player.h"
 #include "ball.h"
 
-#define MAX_TIME_POWER_UP 15
+#define MAX_TIME_POWER_UP 25
+#define SCREEN_OFFSET_X 100
+#define SCREEN_OFFSET_Y 25
 namespace Godziela_pong
 {
 	enum game_type
@@ -26,4 +28,5 @@ namespace Godziela_pong
 	void draw_game();
 	void player_input();
 	void power_up();
+	void reset_power_up();
 }
