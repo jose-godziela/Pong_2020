@@ -10,6 +10,7 @@ namespace Godziela_pong
 	void draw();
 	void input();
 	void reset();
+	void deinit();
 
 	gameState game_state;
 	Ball ball;
@@ -43,7 +44,9 @@ namespace Godziela_pong
 			draw();
 			update();
 		}
+		
 
+		deinit();
 		if (window_open)
 			CloseWindow();
 
@@ -247,5 +250,9 @@ namespace Godziela_pong
 		//Power_up
 		if(game_start)
 			power_up();
+	}
+	void deinit()
+	{
+		//unload sounds, texture, music, etc
 	}
 }
