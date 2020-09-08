@@ -43,9 +43,6 @@ namespace Godziela_pong
 
 			aux_y += BUTTON_SPACE;
 		}
-
-		//What will do each button
-
 	}
 
 	int button_action()
@@ -61,7 +58,7 @@ namespace Godziela_pong
 			else
 				buttons[i].col = BLUE;
 		}
-		return 5;
+		return 5; //This means nothing will happen, because i already used the 0 to start the game PvP
 	}
 
 	void draw_buttons()

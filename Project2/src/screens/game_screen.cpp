@@ -59,7 +59,7 @@ namespace Godziela_pong
 		power_up_pickup.ball_position = { 0,0 };
 		power_up_pickup.ball_speed = { NULL, NULL };
 		power_up_pickup.ball_speed_init = ball.ball_speed;
-		power_up_pickup.ball_radius = 10;
+		power_up_pickup.ball_radius = POWER_UP_RADIUS;
 		power_up_pickup.color = DARKGREEN;
 		power_up_pickup.active = false;
 		random_time = GetRandomValue(0, MAX_TIME_POWER_UP);
@@ -69,11 +69,8 @@ namespace Godziela_pong
 
 	void power_up()
 	{
-
 		if (counter == random_time)
 		{
-
-
 			power_up_pickup.ball_position.x = pos_x;
 			power_up_pickup.ball_position.y = pos_y;
 			power_up_pickup.power_up = NULL;

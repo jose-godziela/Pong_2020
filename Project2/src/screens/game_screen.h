@@ -6,6 +6,7 @@
 #define MAX_TIME_POWER_UP 25
 #define SCREEN_OFFSET_X 100
 #define SCREEN_OFFSET_Y 25
+#define POWER_UP_RADIUS 10
 namespace Godziela_pong
 {
 	enum game_type
@@ -15,6 +16,7 @@ namespace Godziela_pong
 	};
 	enum Class_power_up
 	{
+		None = 0,
 		Big_chungus = 1,
 		More_speed,
 		Shield,
