@@ -20,8 +20,7 @@ namespace Godziela_pong
 
 		if (key >= min_ascii && key <= max_ascii)
 			key -= ascii_offset;
-
-		if (key < min_ascii && key > max_ascii)
+		else if (key < min_ascii || key > max_ascii)
 			key = NULL;
 
 		if (key != NULL && ((key != KEY_P && key != KEY_P - 32) && key != KEY_ESCAPE))
@@ -63,9 +62,9 @@ namespace Godziela_pong
 
 	void draw_change_controls()
 	{
+		DrawText("Only letters for the moment", GetScreenWidth() / 4, GetScreenHeight() / 3, 15, BLUE);
 		for (int i = 0; i < CANT_KEYS; i++)
 		{
-
 			switch (controls)
 			{
 			case UP_J1: {
