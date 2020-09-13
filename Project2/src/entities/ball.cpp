@@ -15,6 +15,8 @@ namespace Godziela_pong
 		ball.ball_radius = 20;
 		ball.active = true;
 		ball.power_up = NULL;
+		ball.p1_hit = false;
+		ball.p2_hit = false;
 	}
 
 	void reset_ball()

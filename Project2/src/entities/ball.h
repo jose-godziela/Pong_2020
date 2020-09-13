@@ -12,6 +12,8 @@ namespace Godziela_pong
 		float ball_radius;
 		Color color;
 		bool active;
+		bool p1_hit;
+		bool p2_hit;
 		int power_up;
 	};
 

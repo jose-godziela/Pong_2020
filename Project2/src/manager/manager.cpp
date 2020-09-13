@@ -3,7 +3,6 @@
 namespace Godziela_pong
 {
 
-
 	void init();
 	void update();
 	void update_game();
@@ -190,11 +189,15 @@ namespace Godziela_pong
 			CheckCollisionCircleRec(ball.ball_position, ball.ball_radius, players[PLAYER2].rec)) {
 			ball.ball_speed.x *= -1.0f;
 			if (ball.ball_speed.x < 0) {
+				ball.p2_hit = true;
+				ball.p1_hit = false;
 				ball.ball_speed.x -= speed_up;
 				ball.ball_speed.y = (ball.ball_position.y - players[PLAYER1].rec.x) / (players[PLAYER1].rec.x / 2) * 6;
 				ball.ball_position.x -= ball.ball_radius;
 			}
 			else {
+				ball.p1_hit = true;
+				ball.p2_hit = false;
 				ball.ball_speed.x += speed_up;
 				ball.ball_speed.y = (ball.ball_position.y - players[PLAYER2].rec.x) / (players[PLAYER2].rec.x / 2) * 6;
 				ball.ball_position.x += ball.ball_radius;
