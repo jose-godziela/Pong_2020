@@ -2,10 +2,10 @@
 #pragma once
 #include "raylib.h"
 
-#define CANT_BUTTONS 5
-#define BUTTON_WIDTH 300
-#define BUTTON_HEIGHT 30
-#define BUTTON_SPACE 50
+const int CANT_BUTTONS = 5;
+const int BUTTON_WIDTH = 300;
+const int BUTTON_HEIGHT = 30;
+const int BUTTON_SPACE = 50;
 
 namespace Godziela_pong
 {

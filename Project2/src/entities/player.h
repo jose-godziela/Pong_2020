@@ -1,12 +1,13 @@
 #pragma once
 #include "raylib.h"
 
+const int TOTAL_PLAYERS = 2;
+const int PLAYER1 = 0;
+const int PLAYER2 = 1;
+const int VEL_PLAYER = 385.0f;
+
 namespace Godziela_pong
 {
-#define TOTAL_PLAYERS 2
-#define PLAYER1 0
-#define PLAYER2 1
-#define VEL_PLAYER 385.0f
 
 	struct Player {
 		Rectangle rec;

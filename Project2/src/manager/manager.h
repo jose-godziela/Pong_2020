@@ -6,11 +6,11 @@
 #include <math.h>
 #include "raylib.h"
 
-#define FPS 60
-#define WINDOW_WIDTH 800
-#define WINDOW_HEIGHT 480
-#define CANT_PLAYERS 2
-#define GAME_FONT 20
+const int FPS = 60;
+const int WINDOW_WIDTH = 800;
+const int WINDOW_HEIGHT = 480;
+const int CANT_PLAYERS = 2;
+const int GAME_FONT = 20;
 
 #include "player.h"
 #include "ball.h"

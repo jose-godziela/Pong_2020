@@ -36,10 +36,10 @@ namespace Godziela_pong
 		//
 		if (game_Type != PvP) {
 			if (ball.ball_position.y < players[PLAYER2].rec.y && ball.ball_position.x >= GetScreenWidth() / 2) {
-				players[PLAYER2].rec.y -= VEL_PLAYER * GetFrameTime();
+				players[PLAYER2].rec.y -= VEL_PLAYER * GetFrameTime() * 0.9f;
 			}
 			if (ball.ball_position.y > players[PLAYER2].rec.y && ball.ball_position.x >= GetScreenWidth() / 2) {
-				players[PLAYER2].rec.y += VEL_PLAYER * GetFrameTime();
+				players[PLAYER2].rec.y += VEL_PLAYER * GetFrameTime() * 0.9f;
 			}
 		}
 		else {

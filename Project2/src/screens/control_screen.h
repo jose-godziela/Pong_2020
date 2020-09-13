@@ -2,7 +2,7 @@
 #include "raylib.h"
 #include "player.h"
 
-#define CANT_KEYS 4
+const int CANT_KEYS = 4;
 
 namespace Godziela_pong
 {

@@ -3,10 +3,10 @@
 #include "player.h"
 #include "ball.h"
 
-#define MAX_TIME_POWER_UP 25
-#define SCREEN_OFFSET_X 100
-#define SCREEN_OFFSET_Y 25
-#define POWER_UP_RADIUS 10
+const int MAX_TIME_POWER_UP = 25;
+const int SCREEN_OFFSET_X = 100;
+const int SCREEN_OFFSET_Y = 25;
+const int POWER_UP_RADIUS = 10;
 namespace Godziela_pong
 {
 	enum game_type
