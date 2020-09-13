@@ -1,4 +1,5 @@
-#pragma once
+#ifndef BALL_H
+#define BALL_H
 #include "raylib.h"
 
 namespace Godziela_pong
@@ -21,3 +22,4 @@ namespace Godziela_pong
 	void init_ball();
 	void reset_ball();
 }
+#endif

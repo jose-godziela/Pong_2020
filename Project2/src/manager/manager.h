@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MANAGER_H
+#define MANAGER_H
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,3 +38,4 @@ namespace Godziela_pong
 
 	extern gameState game_state;
 }
+#endif

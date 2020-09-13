@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CONTROL_SCREEN_H
+#define CONTROL_SCREEN_H
 #include "raylib.h"
 #include "player.h"
 
@@ -21,3 +22,4 @@ namespace Godziela_pong
 	void draw_change_controls();
 
 }
+#endif

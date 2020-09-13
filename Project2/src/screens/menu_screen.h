@@ -1,5 +1,6 @@
-//Reason to change menu, game and credits screens to diff .cpp is to be able to modify all different screens without creating unexpected errors
-#pragma once
+//Reason to change menu, game and credits screens to diff .cpp is to be able to modify all different screens without creating unexpected 
+#ifndef MENU_SCREEN_H
+#define MENU_SCREEN_H
 #include "raylib.h"
 
 const int CANT_BUTTONS = 5;
@@ -22,3 +23,4 @@ namespace Godziela_pong
 
 	extern Button buttons[CANT_BUTTONS];
 }
+#endif
