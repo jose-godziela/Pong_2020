@@ -7,18 +7,18 @@
 #include <math.h>
 #include "raylib.h"
 
-const int FPS = 60;
-const int WINDOW_WIDTH = 800;
-const int WINDOW_HEIGHT = 480;
-const int CANT_PLAYERS = 2;
-const int GAME_FONT = 20;
-
 #include "player.h"
 #include "ball.h"
 #include "menu_screen.h"
 #include "game_screen.h"
 #include "credits_screen.h"
 #include "control_screen.h"
+
+const int FPS = 60;
+const int WINDOW_WIDTH = 800;
+const int WINDOW_HEIGHT = 480;
+const int CANT_PLAYERS = 2;
+const int GAME_FONT = 20;
 
 namespace Godziela_pong
 {
